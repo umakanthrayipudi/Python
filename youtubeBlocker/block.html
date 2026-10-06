@@ -1,0 +1,10 @@
+const blockDuration = 10 * 60 * 1000; // 10 minutes
+
+chrome.storage.local.get("blockStartTime", (data) => {
+const blockStartTime = data.blockStartTime || 0;
+const now = Date.now();
+
+if (now < blockStartTime + blockDuration) { const overlay=document.createElement("div"); overlay.style.position="fixed"
+    ; overlay.style.top=0; overlay.style.left=0; overlay.style.width="100%" ; overlay.style.height="100%" ;
+    overlay.style.backgroundColor="#fff" ; overlay.style.zIndex="999999" ; overlay.style.pointerEvents="none" ; //
+    Optional: disable interaction document.documentElement.appendChild(overlay); } });

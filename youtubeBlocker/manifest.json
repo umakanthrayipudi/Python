@@ -1,0 +1,28 @@
+{
+    "manifest_version": 3,
+    "name": "YouTube Cooldown Blocker",
+    "version": "1.0",
+    "description": "Blocks YouTube with a white overlay for 10 minutes.",
+    "permissions": [
+        "storage",
+        "tabs",
+        "scripting"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "host_permissions": [
+        "*://www.youtube.com/*"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "*://www.youtube.com/*"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "run_at": "document_start"
+        }
+    ]
+}
